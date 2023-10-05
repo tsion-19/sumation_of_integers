@@ -1,0 +1,35 @@
+name: Python Program Workflow
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Artifact
+        run: |
+          # Compile the program (in this case, no compilation is needed)
+          echo "No compilation required."
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-program
+
+  run:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: python-program
+
+      - name: Run Python Program
+        run: |
+          python sum_integers.py
