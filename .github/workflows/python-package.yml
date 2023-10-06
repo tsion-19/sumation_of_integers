@@ -23,12 +23,13 @@ jobs:
     needs: build
 
     steps:
-       - name: List Files
-         run: ls -R
+      
        - name: Download Build Artifact
          uses: actions/download-artifact@v3
-         with:
-          name: python-program
+       - name: List Files
+         run: ls -R
+        
+         
 
        - name: Run Python Program
          run: ./sum_integers.py
