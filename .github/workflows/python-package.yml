@@ -1,4 +1,5 @@
-name: build and runon: [pull_request]
+name: build and run
+on: [pull_request]
 
 jobs:
   build:
@@ -29,5 +30,6 @@ jobs:
           name: python-program
 
       - name: Run Python Program
-        run: |
-          python sum_integers.py
+        run: ./sum_integers.py
+              
+         
