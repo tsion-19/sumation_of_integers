@@ -3,11 +3,11 @@ on: [pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-oon: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/heckout@v2
+        uses: actions/checkout@v2
 
       - name: Build Artifact
         run: |
