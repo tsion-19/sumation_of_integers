@@ -1,6 +1,4 @@
-name: build and run
-
-on: [pull_request]
+name: build and runon: [pull_request]
 
 jobs:
   build:
