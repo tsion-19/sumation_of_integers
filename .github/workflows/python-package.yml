@@ -1,13 +1,15 @@
-name: build and run
-on: [pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
-    runs-oon: ubuntu-latest
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/chejkckout@v2
 
       - name: Build Artifact
         run: |
