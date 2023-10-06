@@ -32,7 +32,6 @@ jobs:
          
 
        - name: Run Python Program
-         run: |
-          python sum_integers.py
+         run: /sum_integers.py
               
          
