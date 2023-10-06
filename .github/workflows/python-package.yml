@@ -35,6 +35,6 @@ jobs:
        
          run: 
         
-          python ../sum_integers.py
+          python sum_integers.py
               
          
