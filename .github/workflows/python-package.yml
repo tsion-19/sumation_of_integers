@@ -17,6 +17,7 @@ jobs:
           echo "No compilation required."
 
       - name: Upload Build Artifact
+        needs: build-project
         uses: actions/upload-artifact@v2
         with:
           path: " "
