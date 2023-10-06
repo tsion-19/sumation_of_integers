@@ -30,6 +30,6 @@ jobs:
           name: python-program
 
       - name: Run Python Program
-        run: ./sum_integers.py
+        run: ./sum_intege.py
               
          
