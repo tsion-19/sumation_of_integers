@@ -1,4 +1,4 @@
-name: Python Program Workflow
+name: build and run
 
 on: [pull_request]
 
