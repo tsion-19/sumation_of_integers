@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/heckout@v2
 
       - name: Build Artifact
         run: |
@@ -30,6 +30,6 @@ jobs:
           name: python-program
 
       - name: Run Python Program
-        run: ./sum_intege.py
+        run: ./sum_integers.py
               
          
