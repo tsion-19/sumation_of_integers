@@ -10,10 +10,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-      - name: List Files
-        run: ls -R
-      - name: Download Artifacts 
-        uses: actions/download-artifact@v3
+     
+      - name: upload Artifacts 
+        uses: actions/upload-artifact@v3
     
      
        
@@ -23,12 +22,14 @@ jobs:
     needs: build
 
     steps:
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v3
-        with:
+       - name: List Files
+         run: ls -R
+       - name: Download Build Artifact
+         uses: actions/download-artifact@v3
+         with:
           name: python-program
 
-      - name: Run Python Program
-        run: ./sum_integers.py
+       - name: Run Python Program
+         run: ./sum_integers.py
               
          
