@@ -1,0 +1,14 @@
+name: workflow_name
+on:
+push:
+branches: [ main ]
+workflow_dispatch:
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- name: Greetings
+  run: echo Hello, world!
+- name: Multi-line Greetings
+  run: |
+echo Hello, world!
