@@ -2,8 +2,9 @@
 total = 0
 
 while True:
+    
     try:
-        num = int(input("Enter a positive integer (0 to stop): "))
+        num =input("Enter a positive integer (0 to stop): ")
         if num == 0:
             break
         elif num < 0:
