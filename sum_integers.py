@@ -5,7 +5,7 @@ while True:
    
     print('\nEOFError occurred')
     try:
-        num =input("Enter a positive integer (0 to stop): ")
+        num =int(input("Enter a positive integer (0 to stop): "))
         if num == 0:
             break
         elif num < 0:
