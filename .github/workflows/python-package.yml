@@ -1,40 +1,42 @@
+name: Build and Run
+
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
-     
-      - name: upload Artifacts 
-        uses: actions/upload-artifact@v3
+
+      - name: Build Program
+        run: |
+          # Compile or build your program if necessary
+          # For Python, no compilation step is needed
+          echo "Building complete"
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v2
         with:
-          path: .
-     
-       
+          name: build-artifact
+          path: sum_integers.py
 
   run:
     runs-on: ubuntu-latest
     needs: build
-
     steps:
-      
-       - name: Download Build Artifact
-         uses: actions/download-artifact@v3
-       - name: List Files
-         run: ls -R
-        
-         
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-       - name: Run Python Program
-       
-         run: |
-        
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: build-artifact
+
+      - name: Run Program
+        run: |
           python sum_integers.py
-              
-         
